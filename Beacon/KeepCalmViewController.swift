@@ -13,7 +13,25 @@ class KeepCalmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       // Do any additional setup after loading the view.
+        let blurEffect = UIBlurEffect(style: .Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        self.view.addSubview(blurEffectView)
+        
+        let imageView = UIImageView(image: UIImage(named: "keepcalm"))
+        imageView.center = CGPointMake(self.view.frame.width/2, self.view.frame.height/2)
+        
+        blurEffectView.contentView.addSubview(imageView)
+
+        // Close button
+        let closeButton = UIButton(type: .RoundedRect)
+        closeButton.frame = CGRectMake(0, self.view.frame.height - 50.0, self.view.frame.width, 50.0)
+        closeButton.setTitle("Close", forState: .Normal)
+        closeButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        closeButton.addTarget(self, action: "closeButtonAction:", forControlEvents: .TouchUpInside)
+
+        self.view.addSubview(closeButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +40,9 @@ class KeepCalmViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func closeButtonAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
-    */
 
+    
 }

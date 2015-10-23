@@ -6,8 +6,5 @@
 //  Copyright © 2015 SourcePad. All rights reserved.
 //
 
-#ifndef Beacon_Bridging_Header_h
-#define Beacon_Bridging_Header_h
-
-
-#endif /* Beacon_Bridging_Header_h */
+#import <GoogleMaps/GoogleMaps.h>
+@import GoogleMaps;

@@ -10,4 +10,6 @@ import UIKit
 
 class CustomMarker: GMSMarker {
 
+    var deviceId: String?
+    var state: String?
 }
